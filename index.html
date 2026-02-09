@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ifeoma Precious Ogwu | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #2563eb;
+            --card-bg: #f8fafc;
+            --border: #e2e8f0;
+        }
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --text: #f8fafc;
+            --accent: #3b82f6;
+            --card-bg: #1e293b;
+            --border: #334155;
+        }
+
+        * { transition: all 0.25s ease; box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        header { padding: 100px 0 60px 0; }
+        h1 { font-size: 3.5rem; margin: 0; font-weight: 800; letter-spacing: -2px; }
+        .subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 600; }
+        
+        section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+        h2 { font-size: 1.8rem; margin-bottom: 30px; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .skill-list span { 
+            display: inline-block; 
+            background: var(--card-bg); 
+            padding: 5px 12px; 
+            margin: 4px; 
+            border-radius: 6px; 
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+
+        .project-card { 
+            margin-bottom: 60px; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; 
+            align-items: start;
+        }
+        @media (max-width: 768px) { .project-card { grid-template-columns: 1fr; } }
+        
+        .project-media { 
+            width: 100%; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            background: #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .project-media img, .project-media video { width: 100%; display: block; }
+        
+        .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 800; }
+        
+        .contact-links a, .project-link { 
+            margin-right: 20px; 
+            text-decoration: none; 
+            color: var(--text); 
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .project-link { margin-top: 15px; font-size: 0.9rem; border-bottom: 2px solid var(--accent); color: var(--accent); }
+        .project-link:hover { opacity: 0.7; }
+
+        .btn-resume {
+            background: var(--accent);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none !important;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <button class="theme-toggle" onclick="toggleTheme()" id="toggleBtn">🌙</button>
+
+    <div class="container">
+        <header>
+            <div class="tag">Available for Work</div>
+            <h1>Ifeoma Precious Ogwu</h1>
+            <p class="subtitle">Electrical & Computer Engineering Graduate • US Citizen</p>
+            <p style="max-width: 600px;">Driven and passionate electrical & computer engineer. Recent graduate from The University Of Tulsa with Cum Laude honors. Particularly interested in power systems, energy, electronics (analog and digital). Open to opportunities including internships, contract work, full-time positions in hardware design and development, embedded systems, PCB design, Power Systems, R&D, electrical engineering and computer engineering.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/ifeoma-ogwu/">LinkedIn</a>
+                <a href="https://github.com/Ifeoma16">GitHub</a>
+                <a href="mailto:ifeomalockwood@gmail.com">Email</a>
+                
+                <a href="assets/master_resume_Ogwu.pdf" class="btn-resume" target="_blank">View Resume</a>
+                
+            </div>
+        </header>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-group">
+                    <h4>Hardware</h4>
+                    <div class="skill-list">
+                        <span>PCB Design</span><span>Arduino</span><span>STM32</span><span>Raspberry Pi</span><span>Embedded Systems</span><span>R&D</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h4>Programming</h4>
+                    <div class="skill-list">
+                        <span>Python</span><span>C</span><span>Verilog</span><span>MIPS</span><span>RISC-V</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h4>Software</h4>
+                    <div class="skill-list">
+                        <span>MATLAB</span><span>Simulink</span><span>Firmware</span><span>SolidWorks</span><span>KiCAD</span><span>Microsoft Office</span><span>CymeTCC</span><span>CYMEDist</span><span>PowerBI</span><span>SharePoint</span><span>Power Automate</span>
+                    </div>
+                </div>
+                
+                <div class="skill-group">
+                    <h4>Equipment</h4>
+                    <div class="skill-list">
+                        <span>Oscilloscope</span><span>Multimeter</span><span>Function Generator</span><span>3D Printer</span><span>Circuit Elements</span><span>Soldering</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-media">
+                    
+                        <video controls preload="metadata"><source src="assets/video_demo_senior_design.mp4" type="video/mp4"></video>
+                    
+                </div>
+                <div class="project-info">
+                    <div class="tag">AI</div>
+                    <h3 style="margin: 10px 0;">Reverse Engineering PCBs [In Progress]</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Fine-tuned a YOLOv8 object detection model with a custom dataset of PCB images, divided into 6 main classifications. This project is sill in progress.</p>
+                    <div class="skill-list" style="margin-bottom: 15px;">
+                        <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Roboflow</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Google Colab</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Neural Network</small>
+                    </div>
+                    
+                    
+                    <a href="https://www.linkedin.com/posts/ifeoma-ogwu_this-past-semester-i-did-another-senior-activity-7407789348772909056-KVSS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMD_n8Bf8OKs7h1ObbI2UMxcHzIJcsLgXw" target="_blank" class="project-link">View Project Details →</a>
+                    
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-media">
+                    
+                        <img src="assets/energy_harvesting_setup.png" alt="Ambient Light Energy Harvesting For Microcontroller">
+                    
+                </div>
+                <div class="project-info">
+                    <div class="tag">Energy & Power</div>
+                    <h3 style="margin: 10px 0;">Ambient Light Energy Harvesting For Microcontroller</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Prototyping work of harvesting ambient energy from indoor lighting for a low-power Arduino data logger. A PCB design was also made for a custom solution for trickle charging the battery from the solar cells while it powers the load.</p>
+                    <div class="skill-list" style="margin-bottom: 15px;">
+                        <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Energy Harvesting</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Solar Cells</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Arduino</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#AEM10941 Harvester</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#KiCAD</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Sensors & Peripherals</small>
+                    </div>
+                    
+                    
+                    <a href="https://www.linkedin.com/posts/ifeoma-ogwu_energharvesting-embedded-iot-activity-7375253090427531264-PY2g?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMD_n8Bf8OKs7h1ObbI2UMxcHzIJcsLgXw" target="_blank" class="project-link">View Project Details →</a>
+                    
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-media">
+                    
+                        <img src="assets/rf_matching_circuit.png" alt="Simulation Of RF Energy Harvesting">
+                    
+                </div>
+                <div class="project-info">
+                    <div class="tag">Energy & Power</div>
+                    <h3 style="margin: 10px 0;">Simulation Of RF Energy Harvesting</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">A simulation of a typical quarter-wave monopole antenna with centre frequency of 189 MHz and bandwidth of 6MHz. An impedance matching circuit was designed and the load simulated was 100Ω</p>
+                    <div class="skill-list" style="margin-bottom: 15px;">
+                        <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Simulink</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Radio Frequency</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Energy Harvesting</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Impedance Matching</small>
+                    </div>
+                    
+                    
+                    <a href="https://www.linkedin.com/posts/ifeoma-ogwu_engineering-energyharvesting-wirelesspowertransfer-activity-7401258839725092864-Rosj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMD_n8Bf8OKs7h1ObbI2UMxcHzIJcsLgXw" target="_blank" class="project-link">View Project Details →</a>
+                    
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-media">
+                    
+                        <img src="assets/solar_energy_harvesting.png" alt="Simulation Of Solar Energy Harvesting">
+                    
+                </div>
+                <div class="project-info">
+                    <div class="tag">Energy & Power</div>
+                    <h3 style="margin: 10px 0;">Simulation Of Solar Energy Harvesting</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">A simulation of LL200-2.4-75 PowerFilm solar cells and a capacitor to store charge. A 5kΩ resistor was added to reduce voltage to load and the load simulated was a 2.2V, 20mA LED.</p>
+                    <div class="skill-list" style="margin-bottom: 15px;">
+                        <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Simulink</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Energy Harvesting</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Solar Energy</small>
+                    </div>
+                    
+                    
+                    <a href="https://www.linkedin.com/posts/ifeoma-ogwu_engineering-energyharvesting-wirelesspowertransfer-activity-7401258839725092864-Rosj?utm_source=share&utm_medium=member_desktop&rcm=ACoAADMD_n8Bf8OKs7h1ObbI2UMxcHzIJcsLgXw" target="_blank" class="project-link">View Project Details →</a>
+                    
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-media">
+                    
+                        <video controls preload="metadata"><source src="assets/portable_gaming_system.mp4" type="video/mp4"></video>
+                    
+                </div>
+                <div class="project-info">
+                    <div class="tag">Embedded Systems</div>
+                    <h3 style="margin: 10px 0;">Portable Gaming System</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">A portable gaming system done as a group project. Main microcontroller was an STM32 and my sub-team was in charge of a piano tiles-esque game shwon in video. Project in LinkedIn project section.</p>
+                    <div class="skill-list" style="margin-bottom: 15px;">
+                        <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#STM32</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#STM32CubeIDE</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Kalman Filtering</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Embedded Systems</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Displays</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#MPU6050</small>
+                    </div>
+                    
+                    
+                    <a href="https://www.linkedin.com/in/ifeoma-ogwu/" target="_blank" class="project-link">View Project Details →</a>
+                    
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-media">
+                    
+                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/vgIbLsSRCGw" frameborder="0" allowfullscreen></iframe>
+                    
+                </div>
+                <div class="project-info">
+                    <div class="tag">Communications</div>
+                    <h3 style="margin: 10px 0;">AM Modulation / Demodulation System</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">A simulation of a simple Amplitude Modulation (AM) modulation / demodulation system in Simulink. The system is set up to pass frequencies up to 3.5 kHz and stop frequencies after 5 kHz, so only my voice goes through.</p>
+                    <div class="skill-list" style="margin-bottom: 15px;">
+                        <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Simulink</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Communication Systems</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Amplitude Modulation</small>
+                    </div>
+                    
+                    
+                    <a href="https://www.linkedin.com/posts/ifeoma-ogwu_engineering-communicationsystems-electricalengineering-activity-7404165468397174784-nxgj" target="_blank" class="project-link">View Project Details →</a>
+                    
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div style="margin-bottom: 40px;">
+                <h4 style="margin:0">Distribution Engineer Intern — American Electric Power</h4>
+                <small style="color: var(--accent); font-weight: bold;">June 2025 - December 2025</small>
+                
+                
+                
+                    <ul class="exp-list">
+                        
+                        <li>Worked in the distribution reliability group and supported CVR and DACR efforts</li>
+                        
+                        <li>Configured base cases for 400+ feeders in CYMDIST and exported datasets to SQL supporting Perfect Power initiatives</li>
+                        
+                        <li>Conducted load allocation, ampacity studies, new load studies and short circuit studies to inform protection planning</li>
+                        
+                        <li>Assisted commissioning of IntelliRupter reclosers and the configuring of protection settings and resetting modules, reducing outage resolution time in the field</li>
+                        
+                        <li>Performed coordination analyses in CYMETCC to optimize feeder performance and inform reliability improvements</li>
+                        
+                        <li>Created dashboards using PI Vision for displaying feeders, their devices and various status points for YFA and CVR efforts</li>
+                        
+                        <li>Conducted Arc Flash studies in CYMDIST per customer requests to gain analysis results on specified nodes</li>
+                        
+                    </ul>
+                
+            </div>
+            
+            <div style="margin-bottom: 40px;">
+                <h4 style="margin:0">Business Analyst Intern — SageNet</h4>
+                <small style="color: var(--accent); font-weight: bold;">May 2024 - August 2024</small>
+                
+                
+                
+                    <ul class="exp-list">
+                        
+                        <li>Published 100s of SharePoint subsites used as runbooks for the purpose of a document repository project</li>
+                        
+                        <li>Decreased the gap between operational cost and net profit by 4% through new documentation system</li>
+                        
+                        <li>Created Python scripts to automate data migration from old database to Microsoft SharePoint</li>
+                        
+                        <li>Implemented Power Automate to automate workflow actions for the runbooks made in SharePoint</li>
+                        
+                        <li>Analyzed cybersecurity reports for data validation and segmentation purposes</li>
+                        
+                        <li>Utilized Power BI to create report dashboards for operational organization and data analysis</li>
+                        
+                        <li>Optimized Raspberry Pi boot sequence to load into browser in under 15 seconds</li>
+                        
+                    </ul>
+                
+            </div>
+            
+            <div style="margin-bottom: 40px;">
+                <h4 style="margin:0">Apprentice 3D Print Technician — The University Of Tulsa</h4>
+                <small style="color: var(--accent); font-weight: bold;">August 2024 - December 2025</small>
+                
+                
+                
+                    <ul class="exp-list">
+                        
+                        <li>Operating and maintaining 3D printers (Bambu, Creality, UltiMaker) to produce high-quality prints for student and faculty projects</li>
+                        
+                        <li>Utilizing SolidWorks for designing parts and components, ensuring compatibility with 3D printing specifications</li>
+                        
+                        <li>Slicing and preparing models for printing using Bambu Studio and Creality software, optimizing print settings for efficiency and quality</li>
+                        
+                        <li>Assembling and post-processing printed components, ensuring proper fit and finish for final use</li>
+                        
+                        <li>Provide technical support to students and faculty, assisting with design modifications and print troubleshooting</li>
+                        
+                    </ul>
+                
+            </div>
+            
+            <div style="margin-bottom: 40px;">
+                <h4 style="margin:0">Robotics Researcher — The University Of Tulsa</h4>
+                <small style="color: var(--accent); font-weight: bold;">May 2024 - August 2024</small>
+                
+                
+                
+                    <ul class="exp-list">
+                        
+                        <li>Designed PCB schematics and models for a controller to integrate with the Boston Dynamics’ mobile robot: Spot</li>
+                        
+                        <li>Utilized KiCAD to create detailed schematics and multi-layer PCB layouts</li>
+                        
+                        <li>Researched and tested best components to use for the controller and best ways for production using Raspberry Pi</li>
+                        
+                        <li>Collaborated with a multidisciplinary team to ensure seamless integration with Spot's existing systems</li>
+                        
+                    </ul>
+                
+            </div>
+            
+            <div style="margin-bottom: 40px;">
+                <h4 style="margin:0">Manufacturing Engineer Intern — Access Optics</h4>
+                <small style="color: var(--accent); font-weight: bold;">May 2023 - July 2023</small>
+                
+                
+                
+                    <ul class="exp-list">
+                        
+                        <li>Worked under Atento Capital for one of their portfolio companies, Access Optics, as a manufacturing engineering intern</li>
+                        
+                        <li>Built documentation libraries to support project-specific and continuous use to improve operational efficiency</li>
+                        
+                        <li>Created project reports, assembly processes and work instructions documentation</li>
+                        
+                        <li>Performed research for pricing and purchasing benefit</li>
+                        
+                        <li>Interpreted technical drawings and manufacturer specifications to support experienced engineers</li>
+                        
+                        <li>Refined engineering designs to incorporate new information and specifications</li>
+                        
+                    </ul>
+                
+            </div>
+            
+        </section>
+
+        <footer style="padding: 60px 0; opacity: 0.4; font-size: 0.8rem; text-align: center;">
+            © Ifeoma Precious Ogwu | Created with Python
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById('toggleBtn');
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            btn.innerHTML = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        }
+        
+        if(localStorage.getItem('theme') === 'light') {
+            document.body.setAttribute('data-theme', 'light');
+            document.getElementById('toggleBtn').innerHTML = '☀️';
+        }
+    </script>
+</body>
+</html>
