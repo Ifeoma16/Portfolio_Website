@@ -60,7 +60,7 @@ profile_data = {
             "title": "Portable Gaming System",
             "tag": "Embedded Systems",
             "description": "A portable gaming system done as a group project. Main microcontroller was an STM32 and my sub-team was in charge of a piano tiles-esque game shwon in video. Project in LinkedIn project section.",
-            "video": "assets/portable_gaming_system.mp4",
+            "video-embed": "https://youtube.com/embed/2PcFNbeu9rk",
             "link": "https://www.linkedin.com/in/ifeoma-ogwu/",
             "tech": ["STM32", "STM32CubeIDE", "Kalman Filtering", "Embedded Systems", "Displays", "MPU6050"]
         },
