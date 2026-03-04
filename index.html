@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,13 +72,81 @@
         @media (max-width: 768px) { .project-card { grid-template-columns: 1fr; } }
         
         .project-media { 
+            position: relative;
             width: 100%; 
             border-radius: 12px; 
             overflow: hidden; 
             background: #000;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .project-media img, .project-media video { width: 100%; display: block; }
+        
+        /* Carousel Additions */
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+            width: 100%;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-slide img, .carousel-slide video, .carousel-slide iframe { 
+            width: 100%; 
+            display: block; 
+            object-fit: cover;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 8px 12px;
+            font-size: 18px;
+            border-radius: 50%;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .project-media:hover .carousel-btn { opacity: 1; }
+        .carousel-btn:hover { background: rgba(0,0,0,0.9); }
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+
+        /* Lightbox Additions */
+        .zoomable { cursor: zoom-in; }
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.active { opacity: 1; pointer-events: all; }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            font-weight: bold;
+        }
         
         .tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 800; }
         
@@ -164,11 +231,38 @@
             <h2>Selected Projects</h2>
             
             <div class="project-card">
-                <div class="project-media">
+                
+                <div class="project-media" id="media-container-1">
+                    <div class="carousel-slides" id="slides-1">
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                <div class="carousel-slide">
+                                    <video controls preload="metadata"><source src="assets/video_demo_senior_design.mp4" type="video/mp4"></video>
+                                </div>
+                            
+                        
+
+                        
+                        
+                            
+                                <div class="carousel-slide">
+                                    <img src="assets/yolo_fine_tuning_results.png" alt="Reverse Engineering PCBs [In Progress]" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                            
+                        
+                        
+                    </div>
                     
-                        <video controls preload="metadata"><source src="assets/video_demo_senior_design.mp4" type="video/mp4"></video>
                     
+                    <button class="carousel-btn prev" onclick="moveSlide(1, -1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1, 1)">&#10095;</button>
                 </div>
+
                 <div class="project-info">
                     <div class="tag">AI</div>
                     <h3 style="margin: 10px 0;">Reverse Engineering PCBs [In Progress]</h3>
@@ -184,11 +278,32 @@
             </div>
             
             <div class="project-card">
-                <div class="project-media">
+                
+                <div class="project-media" id="media-container-2">
+                    <div class="carousel-slides" id="slides-2">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                            
+                                <div class="carousel-slide">
+                                    <img src="assets/energy_harvesting_setup.png" alt="Ambient Light Energy Harvesting For Microcontroller" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                            
+                        
+                        
+                    </div>
                     
-                        <img src="assets/energy_harvesting_setup.PNG" alt="Ambient Light Energy Harvesting For Microcontroller">
                     
+                    <button class="carousel-btn prev" onclick="moveSlide(2, -1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(2, 1)">&#10095;</button>
                 </div>
+
                 <div class="project-info">
                     <div class="tag">Energy & Power</div>
                     <h3 style="margin: 10px 0;">Ambient Light Energy Harvesting For Microcontroller</h3>
@@ -204,11 +319,79 @@
             </div>
             
             <div class="project-card">
-                <div class="project-media">
+                
+                <div class="project-media" id="media-container-3">
+                    <div class="carousel-slides" id="slides-3">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                            
+                                
+                                    <div class="carousel-slide">
+                                        <img src="assets/buck_converter_schematic.png" alt="Adjustable Buck Converter PCB" class="zoomable" onclick="openLightbox(this.src)">
+                                    </div>
+                                
+                                    <div class="carousel-slide">
+                                        <img src="assets/buck_converter_pcb.png" alt="Adjustable Buck Converter PCB" class="zoomable" onclick="openLightbox(this.src)">
+                                    </div>
+                                
+                            
+                        
+                        
+                    </div>
                     
-                        <img src="assets/rf_matching_circuit.PNG" alt="Simulation Of RF Energy Harvesting">
+                    
+                    <button class="carousel-btn prev" onclick="moveSlide(3, -1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(3, 1)">&#10095;</button>
+                </div>
+
+                <div class="project-info">
+                    <div class="tag">Power Electronics</div>
+                    <h3 style="margin: 10px 0;">Adjustable Buck Converter PCB</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Adjustable 650 kHz buck converter, allowing input from 9V - 24V and giving outputs of 5V - 12V with max continous output current of 3A. It utilizes the MP2393 IC as the buck converter. Thick traces were routed to the inductor and voltage input and outputs togive space for current flow. It uses a potentiometer to control the voltage output, the default output would be 5V.</p>
+                    <div class="skill-list" style="margin-bottom: 15px;">
+                        <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Power Electronics</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#DC-DC Converters</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Buck Converters</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#PCB Design</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#KiCAD</small>
+                    </div>
+                    
+                    
+                    <a href="https://ifeoma16.github.io/Portfolio_Website/" target="_blank" class="project-link">View Project Details →</a>
                     
                 </div>
+            </div>
+            
+            <div class="project-card">
+                
+                <div class="project-media" id="media-container-4">
+                    <div class="carousel-slides" id="slides-4">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                            
+                                <div class="carousel-slide">
+                                    <img src="assets/rf_matching_circuit.png" alt="Simulation Of RF Energy Harvesting" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                            
+                        
+                        
+                    </div>
+                    
+                    
+                    <button class="carousel-btn prev" onclick="moveSlide(4, -1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(4, 1)">&#10095;</button>
+                </div>
+
                 <div class="project-info">
                     <div class="tag">Energy & Power</div>
                     <h3 style="margin: 10px 0;">Simulation Of RF Energy Harvesting</h3>
@@ -224,11 +407,32 @@
             </div>
             
             <div class="project-card">
-                <div class="project-media">
+                
+                <div class="project-media" id="media-container-5">
+                    <div class="carousel-slides" id="slides-5">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                            
+                                <div class="carousel-slide">
+                                    <img src="assets/solar_energy_harvesting.png" alt="Simulation Of Solar Energy Harvesting" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                            
+                        
+                        
+                    </div>
                     
-                        <img src="assets/solar_energy_harvesting.PNG" alt="Simulation Of Solar Energy Harvesting">
                     
+                    <button class="carousel-btn prev" onclick="moveSlide(5, -1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(5, 1)">&#10095;</button>
                 </div>
+
                 <div class="project-info">
                     <div class="tag">Energy & Power</div>
                     <h3 style="margin: 10px 0;">Simulation Of Solar Energy Harvesting</h3>
@@ -244,11 +448,32 @@
             </div>
             
             <div class="project-card">
-                <div class="project-media">
+                
+                <div class="project-media" id="media-container-6">
+                    <div class="carousel-slides" id="slides-6">
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                <div class="carousel-slide">
+                                    <video controls preload="metadata"><source src="assets/portable_gaming_system.mp4" type="video/mp4"></video>
+                                </div>
+                            
+                        
+
+                        
+                        
+                        
+                    </div>
                     
-                        <video controls preload="metadata"><source src="assets/portable_gaming_system.mp4" type="video/mp4"></video>
                     
+                    <button class="carousel-btn prev" onclick="moveSlide(6, -1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(6, 1)">&#10095;</button>
                 </div>
+
                 <div class="project-info">
                     <div class="tag">Embedded Systems</div>
                     <h3 style="margin: 10px 0;">Portable Gaming System</h3>
@@ -264,11 +489,32 @@
             </div>
             
             <div class="project-card">
-                <div class="project-media">
+                
+                <div class="project-media" id="media-container-7">
+                    <div class="carousel-slides" id="slides-7">
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                <div class="carousel-slide">
+                                    <video controls preload="metadata"><source src="assets/am_system_demo.mp4" type="video/mp4"></video>
+                                </div>
+                            
+                        
+
+                        
+                        
+                        
+                    </div>
                     
-                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/vgIbLsSRCGw" frameborder="0" allowfullscreen></iframe>
                     
+                    <button class="carousel-btn prev" onclick="moveSlide(7, -1)">&#10094;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(7, 1)">&#10095;</button>
                 </div>
+
                 <div class="project-info">
                     <div class="tag">Communications</div>
                     <h3 style="margin: 10px 0;">AM Modulation / Demodulation System</h3>
@@ -291,7 +537,6 @@
             <div style="margin-bottom: 40px;">
                 <h4 style="margin:0">Distribution Engineer Intern — American Electric Power</h4>
                 <small style="color: var(--accent); font-weight: bold;">June 2025 - December 2025</small>
-                
                 
                 
                     <ul class="exp-list">
@@ -319,7 +564,6 @@
                 <small style="color: var(--accent); font-weight: bold;">May 2024 - August 2024</small>
                 
                 
-                
                     <ul class="exp-list">
                         
                         <li>Published 100s of SharePoint subsites used as runbooks for the purpose of a document repository project</li>
@@ -345,7 +589,6 @@
                 <small style="color: var(--accent); font-weight: bold;">August 2024 - December 2025</small>
                 
                 
-                
                     <ul class="exp-list">
                         
                         <li>Operating and maintaining 3D printers (Bambu, Creality, UltiMaker) to produce high-quality prints for student and faculty projects</li>
@@ -367,7 +610,6 @@
                 <small style="color: var(--accent); font-weight: bold;">May 2024 - August 2024</small>
                 
                 
-                
                     <ul class="exp-list">
                         
                         <li>Designed PCB schematics and models for a controller to integrate with the Boston Dynamics’ mobile robot: Spot</li>
@@ -385,7 +627,6 @@
             <div style="margin-bottom: 40px;">
                 <h4 style="margin:0">Manufacturing Engineer Intern — Access Optics</h4>
                 <small style="color: var(--accent); font-weight: bold;">May 2023 - July 2023</small>
-                
                 
                 
                     <ul class="exp-list">
@@ -413,6 +654,11 @@
         </footer>
     </div>
 
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Fullscreen">
+    </div>
+
     <script>
         function toggleTheme() {
             const body = document.body;
@@ -426,6 +672,54 @@
         if(localStorage.getItem('theme') === 'light') {
             document.body.setAttribute('data-theme', 'light');
             document.getElementById('toggleBtn').innerHTML = '☀️';
+        }
+
+        // --- Carousel Logic ---
+        const slideIndices = {};
+
+        function moveSlide(projectIndex, direction) {
+            if (slideIndices[projectIndex] === undefined) {
+                slideIndices[projectIndex] = 0;
+            }
+            
+            const slidesContainer = document.getElementById('slides-' + projectIndex);
+            const slides = slidesContainer.querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+            
+            slideIndices[projectIndex] += direction;
+            
+            if (slideIndices[projectIndex] >= totalSlides) {
+                slideIndices[projectIndex] = 0;
+            } else if (slideIndices[projectIndex] < 0) {
+                slideIndices[projectIndex] = totalSlides - 1;
+            }
+            
+            const offset = -slideIndices[projectIndex] * 100;
+            slidesContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Hide arrows if a project only has 1 media item
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.project-media').forEach(container => {
+                const slides = container.querySelectorAll('.carousel-slide');
+                if (slides.length <= 1) {
+                    container.querySelectorAll('.carousel-btn').forEach(btn => btn.style.display = 'none');
+                }
+            });
+        });
+
+        // --- Lightbox Logic ---
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            setTimeout(() => { document.getElementById('lightbox-img').src = ""; }, 300); // clear src after animation
         }
     </script>
 </body>
