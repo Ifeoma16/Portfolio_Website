@@ -261,7 +261,19 @@
                         
                             
                                 <div class="carousel-slide">
-                                    <img src="assets/yolo_fine_tuning_results.png" alt="Reverse Engineering PCBs [In Progress]" class="zoomable" onclick="openLightbox(this.src)">
+                                    <img src="assets/yolo_fine_tuning_results.png" alt="Reverse Engineering PCBs" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/pcb_component_analyzer_home.PNG" alt="Reverse Engineering PCBs" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/pcb_analysis_summary.PNG" alt="Reverse Engineering PCBs" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/interactive_expert_chat.PNG" alt="Reverse Engineering PCBs" class="zoomable" onclick="openLightbox(this.src)">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/PCB_AI_Chat_Monitor.png" alt="Reverse Engineering PCBs" class="zoomable" onclick="openLightbox(this.src)">
                                 </div>
                             
                         
@@ -275,8 +287,8 @@
 
                 <div class="project-info">
                     <div class="tag">AI</div>
-                    <h3 style="margin: 10px 0;">Reverse Engineering PCBs [In Progress]</h3>
-                    <p style="font-size: 0.95rem; opacity: 0.9;">Fine-tuned a YOLOv8 object detection model with a custom dataset of PCB images, divided into 6 main classifications. This project is sill in progress.</p>
+                    <h3 style="margin: 10px 0;">Reverse Engineering PCBs</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9;">Fine-tuned a YOLOv8 object detection model with a custom dataset of PCB images, divided into 6 main classifications. The algorithm takes in a new PCB imgae, runs it through our fine-tuned YOLOv8 model which identifies clusters of components that constitute major circuit classifications (eg Linear regulator) and draws boxes around them, this result along with the image is fed into a pre-trained Google 2.5 flash model which gives the user a comprehensive feedback on the major circuits identified, possible use cases of the PCB itself etc. This algorithm was tested in Google Colab. Hugging face was used to host the fine-tuned YOLOv8 and create a web app for our program. MongoDB was used to store data from web app use and create ddashboard of metrics.</p>
                     <div class="skill-list" style="margin-bottom: 15px;">
                         <small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Roboflow</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Google Colab</small><small style="margin-right:10px; color:var(--accent); font-weight:bold;">#Neural Network</small>
                     </div>
